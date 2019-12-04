@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <link href="groccery.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart</title>
+</head>
+
+
+<script src="groccery.js">
+
+</script>
+<body>
+
+    <div class="back-ground" >
+            <h1 class="head2"> Shopping Cart </h1> 
+            <hr>
+            <br><br>
+            <b class="text">Name</b>
+            <input  id="name" class="label1" >
+            <br>
+            <b class="text">Unit</b>
+            <input type="number" id="unit" min="0" class="label2" >
+            <br>
+            <b class="text">Amount of one unit</b>
+            <input type="number"  id="amount" class="label3">
+             <br>
+             <br>
+             
+            <input type="button" id="details" min="0" value="Add"  onclick="add_element()">
+            <br><br>
+             <table id="containers" aria-readonly="true" class="text">
+                 <tr>
+                     <th>Name</th>
+                     <th>Unit</th>
+                     <th>Amount</th>
+                     <th>Total</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+                
+                 </table>
+
+                 <br><br>
+                 <table id="grand_total">
+                <tr>
+                    <td>Grand Total: </td>
+                    <td id="jkl"> </td>    
+                </table>
+             </div>
+   
+</body>
+</html>

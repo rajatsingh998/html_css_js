@@ -1,0 +1,91 @@
+body{
+    background-image: url("https://cdn.hipwallpaper.com/i/28/25/M1PqGQ.png");     
+    background-repeat: no-repeat;
+    height: 100%;
+}
+div.back-ground{
+    
+    background-color: rgba(224, 224, 228, 0.753);
+    padding: 50px;
+    margin: auto;
+    margin-left:300px;
+    width: 50%;
+    height:  auto;
+    position: absolute;
+    filter: alpha(opacity=60);
+    border-style: solid;
+}
+b.text{
+    padding: 12px 12px 12px ;
+    display: inline-block;
+    margin-left: 10px;
+}
+input.label1{
+    width: 50%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-left: 100px;
+    
+}
+input.label2{
+    width: 50%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-left: 110px;
+    
+}
+input.label3{
+    width: 50%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-left: 7px;
+    
+}
+table, th, tr {
+    border: 1px solid black;
+  }
+ #details {background-color: rgb(76, 175, 162); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin:auto;
+  display:block;
+  }
+  #containers, #grand_total{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #containers tr, #containers th, #grand_total {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #containers tr:nth-child(even){background-color: #f2f2f2;}
+  
+ 
+  
+  #containers th , #grand_total {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+  }
+  h1.head2{
+    text-align: center ;
+    font-size: 50px;
+    margin-top: 0px;
+    font-family: "Ariel";
+    font-weight: bold;
+}
