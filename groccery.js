@@ -77,7 +77,7 @@ function changeRow(obj){
     table.rows[index].style.backgroundColor="white";
     let total_unit=parseFloat( table.rows[index].cells[1].innerText);
     var amount_of_one_unit=parseFloat ( table.rows[index].cells[AMOUNT_COL].innerText);
-     var total_amount=total_unit*amount_of_one_unit;
+     var total_amount=(total_unit*amount_of_one_unit).toFixed(2);
     var total_amount=total_amount.toString();
 
     table.rows[index].cells[3].innerHTML=total_amount;
@@ -111,11 +111,11 @@ function grandTotal(){
     let tableid=document.getElementById("containers");
     let tableid1=document.getElementById("grand_total");
     if(tableid.rows.length==2){
-        sum= parseFloat(tableid.rows[1].cells[3].innerHTML);
+        sum= parseFloat(tableid.rows[1].cells[TOTAL_AMOUNT_COL].innerHTML);
     }
     else{
     for(let i=1;i<tableid.rows.length;i++){
-        sum = sum + parseFloat(tableid.rows[i].cells[3].innerHTML);
+        sum = sum + parseFloat(tableid.rows[i].cells[TOTAL_AMOUNT_COL].innerHTML);
     }
 }
     sum.toFixed(2);
