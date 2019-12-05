@@ -1,3 +1,9 @@
+const NAME_COL=0;
+const UNIT_COL=1;
+const AMOUNT_COL=2;
+const TOTAL_AMOUNT_COL=3;
+const DELETE_BTN=4;
+const EDIT_BTN=5;
 function add_element(){
     let name=document.getElementById("name");
     let unit=document.getElementById("unit");
@@ -22,12 +28,12 @@ function add_element(){
     var total_amount=total_amount.toString();
     
     
-    row.insertCell(0).innerHTML=name.value;
-    row.insertCell(1).innerHTML=unit.value;
-    row.insertCell(2).innerHTML=amount.value;
-    row.insertCell(3).innerHTML+=total_amount;
-    row.insertCell(4).innerHTML='<input type="button" value = "Delete" onclick="deleteRow(this)">';
-    row.insertCell(5).innerHTML='<input type="button" value = "Edit" onclick="editRow(this)">';
+    row.insertCell(NAME_COL).innerHTML=name.value;
+    row.insertCell(UNIT_COL).innerHTML=unit.value;
+    row.insertCell(AMOUNT_COL).innerHTML=amount.value;
+    row.insertCell(TOTAL_AMOUNT_COL).innerHTML+=total_amount;
+    row.insertCell(DELETE_BTN).innerHTML='<input type="button" value = "Delete" onclick="deleteRow(this)">';
+    row.insertCell(EDIT_BTN).innerHTML='<input type="button" value = "Edit" onclick="editRow(this)">';
     document.getElementById("name").value="";
     document.getElementById("unit").value="";
     document.getElementById("amount").value="";
@@ -39,10 +45,10 @@ function editRow(obj){
     var index = obj.parentNode.parentNode.rowIndex;
    
     var table = document.getElementById("containers");
-    table.rows[index].cells[5].innerHTML='<input type="button" value = "Save" onclick="changeRow(this)">';
-    table.rows[index].cells[0].contentEditable = true;
-    table.rows[index].cells[1].contentEditable=true;
-    table.rows[index].cells[2].contentEditable=true;
+    table.rows[index].cells[EDIT_BTN].innerHTML='<input type="button" value = "Save" onclick="changeRow(this)">';
+    table.rows[index].cells[NAME_COL].contentEditable = true;
+    table.rows[index].cells[UNIT_COL].contentEditable=true;
+    table.rows[index].cells[AMOUNT_COL].contentEditable=true;
     table.rows[index].style.backgroundColor="red";
     
 }
@@ -52,25 +58,25 @@ function changeRow(obj){
     
     var table = document.getElementById("containers");
     
-    if(table.rows[index].cells[0].innerText.length<1 || table.rows[index].cells[1].innerText.length<1 || table.rows[index].cells[2].innerText.length<1){
+    if(table.rows[index].cells[ NAME_COL].innerText.length<1 || table.rows[index].cells[UNIT_COL].innerText.length<1 || table.rows[index].cells[AMOUNT_COL].innerText.length<1){
         alert("Enter All Input");
        return false;
         
     }
-    if( table.rows[index].cells[1].innerText<1 || table.rows[index].cells[2].innerText<1){
+    if( table.rows[index].cells[UNIT_COL].innerText<1 || table.rows[index].cells[AMOUNT_COL].innerText<1){
         alert("Enter positive input");
         return false;
     }
-    if(isNaN(table.rows[index].cells[1].innerText)|| isNaN(table.rows[index].cells[2].innerText)){
+    if(isNaN(table.rows[index].cells[UNIT_COL].innerText)|| isNaN(table.rows[index].cells[AMOUNT_COL].innerText)){
         alert("Enter number only");
         return false;
     }
-    table.rows[index].cells[0].contentEditable = false;
-    table.rows[index].cells[1].contentEditable=false;
-    table.rows[index].cells[2].contentEditable=false;
+    table.rows[index].cells[ NAME_COL].contentEditable = false;
+    table.rows[index].cells[UNIT_COL].contentEditable=false;
+    table.rows[index].cells[AMOUNT_COL].contentEditable=false;
     table.rows[index].style.backgroundColor="white";
     let total_unit=parseFloat( table.rows[index].cells[1].innerText);
-    var amount_of_one_unit=parseFloat ( table.rows[index].cells[2].innerText);
+    var amount_of_one_unit=parseFloat ( table.rows[index].cells[AMOUNT_COL].innerText);
      var total_amount=total_unit*amount_of_one_unit;
     var total_amount=total_amount.toString();
 
@@ -89,13 +95,13 @@ function deleteRow(obj) {
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("containers");
    
-   let ok=parseInt(table.rows[index].cells[3].innerText);
+   let temp=parseInt(table.rows[index].cells[TOTAL_AMOUNT_COL].innerText);
 
     table.deleteRow(index);
     let tableid1=document.getElementById("grand_total");
    
 
-    tableid1.rows[0].cells[1].innerText= tableid1.rows[0].cells[1].innerText-ok;
+    tableid1.rows[0].cells[1].innerText= tableid1.rows[0].cells[1].innerText-temp;
     
 }
 
