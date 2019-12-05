@@ -16,20 +16,29 @@
 <body>
 
     <div class="back-ground" >
+        
+            
             <h1 class="head2"> Shopping Cart </h1> 
             <hr>
-            <br><br>
-            <b class="text">Name</b>
-            <input  id="name" class="label1" >
-            <br>
-            <b class="text">Unit</b>
-            <input type="number" id="unit" min="0" class="label2" >
-            <br>
-            <b class="text">Amount of one unit</b>
-            <input type="number"  id="amount" class="label3">
-             <br>
-             <br>
+            <table id="tab">
+             <tr>   
+           <th><b class="text">Name</b></th>
              
+            
+           <th> <input  id="name" class="label1" ></th></tr>
+            <br>
+            <tr>   
+            <th>
+            <b class="text">Unit</b></th>
+           <th> <input type="number" id="unit" min="0" class="label2" ></th></tr>
+            <br>
+            <tr>
+                <th>
+            <b class="text">Amount </b></th>
+            <th><input type="number"  id="amount" class="label3"></th></tr>
+             <br>
+             <br>
+         </table>    
             <input type="button" id="details" min="0" value="Add"  onclick="add_element()">
             <br><br>
              <table id="containers" aria-readonly="true" class="text">

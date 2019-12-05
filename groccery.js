@@ -51,6 +51,25 @@ function changeRow(obj){
     var index = obj.parentNode.parentNode.rowIndex;
     
     var table = document.getElementById("containers");
+    
+    if(table.rows[index].cells[0].innerText.length<1 || table.rows[index].cells[1].innerText.length<1 || table.rows[index].cells[2].innerText.length<1){
+        alert("Enter All Input");
+       
+        
+        return false;
+        
+    }
+    if( table.rows[index].cells[1].innerText<1 || table.rows[index].cells[2].innerText<1){
+        alert("Enter positive input");
+
+        return false;
+    }
+    if(isNaN(table.rows[index].cells[1].innerText)|| isNaN(table.rows[index].cells[2].innerText)){
+        alert("Enter number only");
+  
+        
+        return false;
+    }
     table.rows[index].cells[0].contentEditable = false;
     table.rows[index].cells[1].contentEditable=false;
     table.rows[index].cells[2].contentEditable=false;
@@ -74,11 +93,12 @@ function deleteRow(obj) {
       
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("containers");
+   
    let ok=parseInt(table.rows[index].cells[3].innerText);
 
     table.deleteRow(index);
     let tableid1=document.getElementById("grand_total");
-    
+   
 
     tableid1.rows[0].cells[1].innerText= tableid1.rows[0].cells[1].innerText-ok;
     
