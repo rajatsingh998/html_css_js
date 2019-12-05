@@ -80,9 +80,9 @@ function changeRow(obj){
      var total_amount=(total_unit*amount_of_one_unit).toFixed(2);
     var total_amount=total_amount.toString();
 
-    table.rows[index].cells[3].innerHTML=total_amount;
+    table.rows[index].cells[TOTAL_AMOUNT_COL].innerHTML=total_amount;
     
-    table.rows[index].cells[5].innerHTML='<input type="button" value = "Edit" onclick="editRow(this)">';
+    table.rows[index].cells[EDIT_BTN].innerHTML='<input type="button" value = "Edit" onclick="editRow(this)">';
     
     grandTotal();
  
