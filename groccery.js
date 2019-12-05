@@ -18,7 +18,7 @@ function add_element(){
     
     var total_unit=parseFloat( document.getElementById("unit").value);
     var amount_of_one_unit=parseFloat(document.getElementById("amount").value);
-    var total_amount=total_unit*amount_of_one_unit;
+    var total_amount=(total_unit*amount_of_one_unit).toFixed(2);
     var total_amount=total_amount.toString();
     
     
@@ -54,20 +54,15 @@ function changeRow(obj){
     
     if(table.rows[index].cells[0].innerText.length<1 || table.rows[index].cells[1].innerText.length<1 || table.rows[index].cells[2].innerText.length<1){
         alert("Enter All Input");
-       
-        
-        return false;
+       return false;
         
     }
     if( table.rows[index].cells[1].innerText<1 || table.rows[index].cells[2].innerText<1){
         alert("Enter positive input");
-
         return false;
     }
     if(isNaN(table.rows[index].cells[1].innerText)|| isNaN(table.rows[index].cells[2].innerText)){
         alert("Enter number only");
-  
-        
         return false;
     }
     table.rows[index].cells[0].contentEditable = false;
@@ -117,7 +112,7 @@ function grandTotal(){
         sum = sum + parseFloat(tableid.rows[i].cells[3].innerHTML);
     }
 }
-    
+    sum.toFixed(2);
     tableid1.rows[0].cells[1].innerHTML=sum;
 }
 
