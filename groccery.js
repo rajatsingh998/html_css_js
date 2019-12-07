@@ -4,6 +4,8 @@ const AMOUNT_COL=2;
 const TOTAL_AMOUNT_COL=3;
 const DELETE_BTN=4;
 const EDIT_BTN=5;
+
+
 function add_element(){
     let name=document.getElementById("name");
     let unit=document.getElementById("unit");
@@ -11,14 +13,16 @@ function add_element(){
     let tableid=document.getElementById("containers");
     
     if(name.value.length<1 || unit.value.length<1 || amount.value.length<1){
-        alert("Enter All Input");
+        document.getElementById("error-message").innerHTML="Enter All Input";
         return false;
 
     }
     if(unit.value<1 || amount.value<1){
-        alert("Enter positive input");
+        document.getElementById("error-message").innerHTML="Enter positive input";
         return false;
     }
+
+    document.getElementById("error-message").innerHTML=null;
     let rowcount=tableid.rows.length;
     var row= tableid.insertRow(rowcount); 
     
@@ -59,18 +63,19 @@ function changeRow(obj){
     var table = document.getElementById("containers");
     
     if(table.rows[index].cells[ NAME_COL].innerText.length<1 || table.rows[index].cells[UNIT_COL].innerText.length<1 || table.rows[index].cells[AMOUNT_COL].innerText.length<1){
-        alert("Enter All Input");
+        document.getElementById("error-message").innerHTML="Enter All Input";
        return false;
         
     }
     if( table.rows[index].cells[UNIT_COL].innerText<1 || table.rows[index].cells[AMOUNT_COL].innerText<1){
-        alert("Enter positive input");
+        document.getElementById("error-message").innerHTML="Enter positive input";
         return false;
     }
     if(isNaN(table.rows[index].cells[UNIT_COL].innerText)|| isNaN(table.rows[index].cells[AMOUNT_COL].innerText)){
-        alert("Enter number only");
+        document.getElementById("error-message").innerHTML="Enter number only";
         return false;
     }
+    document.getElementById("error-message").innerHTML=null;
     table.rows[index].cells[ NAME_COL].contentEditable = false;
     table.rows[index].cells[UNIT_COL].contentEditable=false;
     table.rows[index].cells[AMOUNT_COL].contentEditable=false;

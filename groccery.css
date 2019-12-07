@@ -1,14 +1,15 @@
 body{
   background-image: url("https://cdn.hipwallpaper.com/i/28/25/M1PqGQ.png");     
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   height: 100%;
 }
 div.back-ground{
   
   background-color: rgba(224, 224, 228, 0.753);
-  padding: 50px;
+  padding: 8%;
   margin: auto;
-  margin-left:20%;
+  margin-left:17%;
+  align-self: center;
   width: 50%;
   height:  auto;
   position: absolute;
@@ -74,6 +75,9 @@ display:block;
   position: static;
   width: 100%;
 }
+#table2{
+  overflow-x: auto;
+}
 #containers tr, #containers th, #grand_total {
   border: 1px solid #ddd;
   position: static;
@@ -98,4 +102,12 @@ h1.head2{
   margin-top: 0px;
   font-family: "Ariel";
   font-weight: bold;
+}
+#error-message{
+  padding: 12px 12px 12px ;
+  display: inline-block;
+  margin-left: 40%;
+  font-size: large;
+  text-align: center;
+  color: rgb(230, 15, 0);
 }
